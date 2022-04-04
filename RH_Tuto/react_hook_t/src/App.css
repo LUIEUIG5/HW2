@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(50px + 2vmin);
   color: white;
 }
 
@@ -35,4 +35,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.main-block {
+  max-width: 340px;
+  min-height: 400px;
+  padding: 10px 0;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: solid 1px #ccc;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
+  background: #ebebeb;
+}
+form {
+  margin: 0 10px;
 }

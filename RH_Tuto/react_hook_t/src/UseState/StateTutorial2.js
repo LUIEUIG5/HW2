@@ -12,6 +12,8 @@ const StateTutorial2 = () => {
 
     return (
     <div>
+        <h1>Using UseStates</h1>
+        <br/> 
         <input placeholder='Please enter somethong' onChange={onChange}/>
         <br/>
         <div>

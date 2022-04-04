@@ -6,6 +6,7 @@ const ImperativeHandle = () => {
 
   return (
     <div>
+        <h2 className="secondTitle">Use Imperative</h2>
         <button
         onClick={() => {
           buttonRef.current.alterToggle();
