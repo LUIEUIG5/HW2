@@ -19,11 +19,11 @@ function App() {
         <br />
         Welcome to React Hook Presentation.
       </div>
-      <UserForm />
+      {/* <UserForm /> */}
       {/* <StateTutorial/> */}
       {/* <StateTutorial2 /> */}
       {/* <Reducer/> */}
-      {/* <Effect/> */}
+      <Effect />
       {/* <ImperativeHandle /> */}
       {/* <ContextT/> */}
     </div>
