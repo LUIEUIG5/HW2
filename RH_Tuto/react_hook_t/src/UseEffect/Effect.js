@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
 import 'bootstrap/dist/css/bootstrap.css';
-import { ShimmerSectionHeader } from 'react-shimmer-effects';
+import { ShimmerCategoryItem, ShimmerTitle } from 'react-shimmer-effects';
 import Card from 'react-bootstrap/Card';
 
 const Effect = () => {
@@ -18,15 +18,21 @@ const Effect = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [searchTerm]);
 
   const getData = async () => {
+    const url = `https://api.github.com/search/users?q=${searchTerm}`;
     const res = await axios
-      .get(`https://api.github.com/search/users?q=${searchTerm}`)
+      .get(url, data)
       .then((response) => {
         setData(response.data.items);
         console.log('API WAS CALLED');
         setIsLoading(false);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+        }
       });
   };
 
@@ -67,9 +73,30 @@ const Effect = () => {
 
         <h3>GitHub Users Results</h3>
         {isLoading && (
-          <div>
-            <ShimmerSectionHeader />
-            <ShimmerSectionHeader center />
+          <div className="loader">
+            <ShimmerCategoryItem
+              hasImage
+              imageType="thumbnail"
+              imageWidth={100}
+              imageHeight={100}
+            />
+            <ShimmerTitle line={2} gap={10} variant="primary" />
+
+            <ShimmerCategoryItem
+              hasImage
+              imageType="thumbnail"
+              imageWidth={100}
+              imageHeight={100}
+            />
+            <ShimmerTitle line={2} gap={10} variant="primary" />
+
+            <ShimmerCategoryItem
+              hasImage
+              imageType="thumbnail"
+              imageWidth={100}
+              imageHeight={100}
+            />
+            <ShimmerTitle line={2} gap={10} variant="primary" />
           </div>
         )}
         {listUsers}
