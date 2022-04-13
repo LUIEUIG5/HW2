@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <div class="display">
+            <p id="result">0.0</p>
+            <p id="category">Please enter height and weight.</p>
+         </div>
+         <div class="info">
+             <p>Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
+             <p>BMI Categories:</p>
+                <li>'Underweight = 18.5 and lower</li>
+                <li>weight = 18.5–24.9</li>
+                <li>Overweight = 25–29.9</li> 
+                <li>Obesity = BMI of 30 or greater</li>
+         </div>
+
+         <div class="tab">
+            <button class="tablinks" onclick="openMatrics(event, 'us_Matrics')">SD Matrics</button>
+            <button class="tablinks" onclick="openMatrics(event, 'sd_Matrics')">US Matrics</button>
+          </div>
+
+          <div id="us_Matrics" class="tabcontent">
+            <div class="row">
+                <label>Please enter your weight.</label>
+                <input class="wInput" type="number" id="weight" >
+                <span id="weight-val">kg</span>
+             </div>
+             <div class="row">
+                <label>Please enter your height.</label>
+                <input class="hInput" type="number" id="height" >
+                <span id="height-val">cm</span>
+              </div>
+              <button id="btnStd" onclick="calculateStdBMI()">Calculate</button>
+          </div>
+          
+          <div id="sd_Matrics" class="tabcontent">
+            <div class="row">
+                <label>Please enter your weight.</label>
+                <input class="wInput" type="number" id="weight_lb" >
+                <span id="weight_lb-val">lb</span>
+             </div>
+             <div class="row">
+                <label>Please enter your height.</label>
+                <input class="hInput" type="number" id="height_in" >
+                <span id="height_in-val">inch</span>
+              </div>
+              <button id="btnUs" onclick="calculateUsBMI()">Calculate</button>
+          </div>
+
+      </div>
+      
+</body>
+    <script src="index.js"></script>
+</html>
